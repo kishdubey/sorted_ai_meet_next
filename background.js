@@ -1,3 +1,4 @@
 chrome.browserAction.onClicked.addListener(function() {
-  chrome.tabs.create({'url':"chrome://newtab"})
+  var newURL = "meetings.html";
+  chrome.tabs.create({url: newURL})
 })

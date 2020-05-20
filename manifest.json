@@ -2,9 +2,7 @@
   "name": "SortedAI MeetNext",
   "version": "1.0",
   "description": "simple productivity chrome extension, provides a landing page with your next meetings and an option to join them",
-  "chrome_url_overrides" : {
-    "newtab": "meetings.html"
-  },
+
   "permissions": ["tabs"],
   "background": {
     "scripts": ["background.js"],
