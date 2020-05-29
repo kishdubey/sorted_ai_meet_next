@@ -14,7 +14,7 @@ function onGAPILoad() {
     });
 
     gapi.client.calendar.events.list({
-      'calendarId': 'primary',
+          'calendarId': 'primary',
           'timeMin': (new Date()).toISOString(),
           'showDeleted': false,
           'singleEvents': true,
@@ -43,6 +43,7 @@ function onGAPILoad() {
   });
 }
 
-chrome.identity.getAuthToken({interactive: true}, function(token) {
-  console.log('got the token', token);
+chrome.browserAction.onClicked.addListener(function() {
+  var newURL = "meetings.html";
+  chrome.tabs.create({url: newURL})
 })
