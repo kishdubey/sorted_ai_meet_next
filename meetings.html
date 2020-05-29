@@ -5,18 +5,16 @@
     <title>SortedAI - MeetNext</title>
   </head>
   <body>
-    <!-- -->
+    <!-- Authorize and SignOut Buttons-->
     <button id="authorize_button" style="display: none;">Authorize</button>
     <button id="signout_button" style="display: none;">Sign Out</button>
 
     <pre id="content" style="white-space: pre-wrap;"></pre>
 
+    <!-- Landing Page-->
     <script src="meetings.js"></script>
-
-    <script async defer src="https://apis.google.com/js/api.js"
-      onload="this.onload=function(){};handleClientLoad()"
-      onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>
+    <!-- API call-->
+    <script async defer src="calendar_api.js"</script>
 
   </body>
 </html>
