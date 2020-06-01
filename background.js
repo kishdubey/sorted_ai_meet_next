@@ -21,7 +21,7 @@ function onGAPILoad() {
           'maxResults': 10,
           'orderBy': 'startTime'
         }).then(function(response) {
-          var events = response.result.items;
+          var events = response.result.items; //get this into meetings.html
           console.log('Upcoming events:');
 
           if (events.length > 0) {
