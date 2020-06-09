@@ -20,10 +20,21 @@ function onGAPILoad() {
           'timeMin': (new Date()).toISOString(),
           'showDeleted': false,
           'singleEvents': true,
-          'maxResults': 10,
+          'maxResults': 3,
           'orderBy': 'startTime'
         }).then(function(response) {
           var events = response.result.items; //get this into meetings.html
+
+          //Send to meetings.js
+          //chrome.tabs.executeScript(null, {
+          //  code: 'var next_events = ' + JSON.stringify(events)
+          //}, function(){
+          //  chrome.tabs.executeScript(null, {file: 'meetings.js'})
+          //})
+
+          // Store in localStorage
+          localStorage.setItem('events', JSON.stringify(response.result.items));
+
           console.log('Upcoming events:');
           if (events.length > 0) {
             for (i = 0; i < events.length; i++) {
@@ -41,14 +52,7 @@ function onGAPILoad() {
   })
   }, function(error) {
     console.log('error', error)
-  });
-
-  gapi.auth.setToken(null);
-  gapi.auth.signOut();
-}
-
-
-
+  });}
 
 chrome.browserAction.onClicked.addListener(function() {
   var newURL = "meetings.html";
