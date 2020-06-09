@@ -1,4 +1,4 @@
-const API_KEY = 'AIzaSyDagk5ST6C2_VKe_slBdC86FxTut7XcIjU';
+const API_KEY = 'AIzaSyABnJvSE2F0wNDHd_bn0Rm_K_eO-IGpHQg';
 const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
 
 function onGAPILoad() {
@@ -25,7 +25,6 @@ function onGAPILoad() {
         }).then(function(response) {
           var events = response.result.items; //get this into meetings.html
           console.log('Upcoming events:');
-
           if (events.length > 0) {
             for (i = 0; i < events.length; i++) {
               var event = events[i];
@@ -43,7 +42,13 @@ function onGAPILoad() {
   }, function(error) {
     console.log('error', error)
   });
+
+  gapi.auth.setToken(null);
+  gapi.auth.signOut();
 }
+
+
+
 
 chrome.browserAction.onClicked.addListener(function() {
   var newURL = "meetings.html";

@@ -4,7 +4,7 @@
   "description": "simple productivity chrome extension, provides a landing page with your next meetings and an option to join them",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA01VXW/XLOnd7HimWvei/nFCyA6vS/kUP4vsiHRVnbuBXBLjx3f7W/TDFRqRbDf8GvkdJMffK8m8PjXBk4Ixz+o/Q+byT+Y2hT8k9KEdxI+lqiiWG16H+09fenPcVY12jGVuPvIqvmSq8cnH9YPhLt71ENAj/sdQwzaQBPM0oq4aTJ2poTwFBU/sKO7Cn9KdlIydFPSDM1l/re2NzDKbk2FWx/z48hMXGUgwaQXAmNHtzpUX28GeJEv1S8knSJL2AhUAUs6w873lFhj7q7WqlGX4dpllPCZC60yBBVBB8d2w4Pqgj0VCoGJziiN2XG1vawppF/d+B1FC1hlCWz7Px9QIDAQAB",
   "oauth2": {
-    "client_id": "630020724432-m88rd6eleuqodf665oq4ug14k1rlnh0n.apps.googleusercontent.com",
+    "client_id": "630020724432-mmh234vkn0flubhv66gfa8op9p547bnv.apps.googleusercontent.com",
     "scopes":["https://www.googleapis.com/auth/calendar.events.readonly"]
   },
   "content_security_policy": "script-src 'self' https://apis.google.com/; object-src 'self'",
