@@ -7,8 +7,10 @@ function onGAPILoad() {
     apiKey: API_KEY,
     discoveryDocs: DISCOVERY_DOCS,
   }).then(function () {
-    console.log('gapi initialized')
+    console.log('gapi initialized');
+
   chrome.identity.getAuthToken({interactive: true}, function(token) {
+    console.log("token", token);
     gapi.auth.setToken({
       'access_token': token,
     });
