@@ -20,7 +20,7 @@ function onGAPILoad() {
           'timeMin': (new Date()).toISOString(),
           'showDeleted': false,
           'singleEvents': true,
-          'maxResults': 3,
+          'maxResults': 10,
           'orderBy': 'startTime'
         }).then(function(response) {
           var events = response.result.items; //get this into meetings.html

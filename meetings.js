@@ -11,7 +11,12 @@ if (events.length > 0) {
     var cell3 = row.insertCell(2);
 
     cell1.innerHTML = event.summary;
-    cell2.innerHTML = event.timeZone;
+    var when = event.start.dateTime
+    if (!when) {
+      when = event.start.date
+    }
+    when = moment(when).format(('MM/DD/YYYY h:mm a');
+    cell2.innerHTML = when;
     cell3.innerHTMl = event.location;
     console.log(event.summary);
   }
