@@ -1,11 +1,164 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>SortedAI - MeetNext</title>
-  </head>
-  <body>
-    <button id="nextMeetid">Show Next Meetings</button>
-    <script src="background.js"></script>
-  </body>
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
+	lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- Title -->
+  <title>SortedAI - MeetNext</title>
+
+  <!-- Core Stylesheet -->
+  <link href="css/style.css" rel="stylesheet">
+  <link href="css/style-anime.css" rel="stylesheet">
+
+  <!-- Responsive CSS -->
+  <link href="css/responsive.css" rel="stylesheet">
+  <link type="text/css" href="css/jquery.bxslider.css"rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"rel="stylesheet">
+
+</head>
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header_area animated250">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <!-- Menu Area Start -->
+        <div class="col-12 col-lg-10">
+          <div class="menu_area">
+            <nav class="navbar navbar-expand-lg navbar-light">
+              <!-- Logo -->
+              <a class="navbar-brand logo-href" href="meetings.html"> <img
+                src="images/sorted-logo-h.png" class="logo"
+                alt="Sorted AI Logo" />
+              </a>
+              <button class="navbar-toggler" type="button"
+              data-toggle="collapse" data-target="#ca-navbar"
+              aria-controls="ca-navbar" aria-expanded="false"
+              aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Menu Area -->
+            <div class="collapse navbar-collapse " id="ca-navbar">
+              <ul class="navbar-nav ml-auto" id="nav">
+                <!-- <li class="nav-item active"><a class="nav-link"
+                href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link1 click-home-about"
+                href="#about">About</a></li>-->
+                <li class="nav-item"><a
+                  class="nav-link1 click-home-features" href="https://www.sortedai.com/team">Team</a></li>
+                  <li class="nav-item"><a class="nav-link1"
+                    href="https://blog.sortedai.com/">Blog</a></li>
+                    <li class="nav-item"><a
+                      class="nav-link1 click-home-downloadapp"
+                      href="https://qru7n.app.link/H4dYdhmlD4" target="_blank">Download
+                      App</a></li>
+                      <li class="mobile-hidden">&nbsp;&nbsp;</li>
+                      <li><div class="sing-up-button d-lg-none">
+                        <!-- <a href="javascript:void();" data-toggle="modal"
+                        data-target="#serachuuer-modal" id="searchUser">Sign Up</a> -->
+                        <a href="https://accounts.google.com/o/oauth2/v2/auth?response_type=code&amp;client_id=1085024810172-d9d71rg3rj8kulvrca1rvl9j735t2db2.apps.googleusercontent.com&amp;scope=openid%20profile%20email&amp;state=x_UUCa8FiiykFHGxcz4g8IiSl7p-sDy3iFJobf31TCQ%3D&amp;redirect_uri=https://www.sortedai.com/login/oauth2/code/google" class="click-home-mobile-signin">Sign In</a>
+                      </div>
+                      <div class="sing-up-button1 d-none d-lg-block">
+                        <!-- <a href="javascript:void();" data-toggle="modal"
+                        data-target="#serachuuer-modal" id="searchUser">Sign Up</a> -->
+                        <a href="https://accounts.google.com/o/oauth2/v2/auth?response_type=code&amp;client_id=1085024810172-d9d71rg3rj8kulvrca1rvl9j735t2db2.apps.googleusercontent.com&amp;scope=openid%20profile%20email&amp;state=Rx6ijo1reDWAh7f7YhJImGXx3WGy4Ip1oKIU5NjuTm0%3D&amp;redirect_uri=https://www.sortedai.com/login/oauth2/code/google" class="click-home-desktop-signin">Sign In</a>
+                      </div></li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- ***** Header Area End ***** -->
+
+
+      <!-- Background Script -->
+      <script src="background.js"></script>
+
+      <div class="line-shape-container mt-50"></div>
+
+      <!-- Table -->
+      <section class="awesome-feature-area bg-white section_padding_0 clearfix" id="features">
+    		<div class="container">
+    			<div class="row">
+
+    				<div class="col-12">
+    					<div class="row">
+
+    						<div class="col-lg-12">
+    							<div class="single-feature">
+
+    							</div>
+    						</div>
+    					</div>
+    				</div>
+
+    			</div>
+    		</div>
+    	</section>
+    	<!-- ***** Awesome Features End ***** -->
+
+      <!-- ***** CTA Area Start ***** -->
+    	<section class="our-monthly-membership section_padding_50 clearfix">
+    		<div class="container text-center">
+    			<div class="row align-items-center">
+    				<div class="col-12">
+    					<div class="membership-description">
+    						<h2>
+    							<b>Get Sorted. Stay Organized.</b>
+    						</h2>
+
+    					</div>
+    				</div>
+
+    			</div>
+
+    		</div>
+    	</section>
+    	<!-- ***** CTA Area End ***** -->
+
+      <!-- ***** Footer Area Start ***** -->
+    	<footer
+    	class="footer-social-icon text-center section_padding_100_50 clearfix">
+    	<!-- footer logo -->
+    	<div class="footer-text">
+    		<h2>Sorted AI</h2>
+    	</div>
+    	<!-- social icon-->
+    	<div class="footer-social-icon">
+    		<a href="https://www.facebook.com/sortedai" target="_blank"><i
+    			class="fa fa-facebook" aria-hidden="true"></i></a> <a
+    			href="https://twitter.com/sorted_ai" target="_blank"><i
+    			class="fa fa-twitter" aria-hidden="true"></i></a> <a
+    			href="https://linkedin.com/company/sorted-ai" target="_blank"><i
+    			class="fa fa-linkedin" aria-hidden="true"></i></a> <a
+    			href="https://www.instagram.com/sortedai/" target="_blank"> <i
+    			class="fa fa-instagram" aria-hidden="true"></i></a>
+
+    	</div>
+    	<div class="footer-menu">
+    		<nav>
+    			<ul>
+    				<li><a href="https://www.sortedai.com/sortedai-story">Our Story</a></li>
+    				<li><a href="https://www.sortedai.com/team">Team</a></li>
+    				<li><a href="https://www.sortedai.com/recognition">Recognitions</a></li>
+    				<li><a href="https://www.sortedai.com/media">Media</a></li>
+    				<li><a href="mailto:hello@sortedai.com">Contact</a></li>
+    				<li><a href="https://www.sortedai.com/faqs">FAQs</a></li>
+    				<li><a href="https://www.sortedai.com/privacy">Privacy</a></li>
+    				<li><a href="https://www.sortedai.com/security">Security</a></li>
+
+    			</ul>
+    		</nav>
+    	</div>
+    	<!-- Foooter Text-->
+    	<div class="copyright-text">
+    		<p>Sorted AI ©2020 Ordenado Labs Pvt. Ltd.</p>
+    	</div>
+    </footer>
+
+</body>
 </html>
