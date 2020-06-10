@@ -24,7 +24,6 @@ function onGAPILoad() {
           'orderBy': 'startTime'
         }).then(function(response) {
           var events = response.result.items; //get this into meetings.html
-
           //Send to meetings.js
           //chrome.tabs.executeScript(null, {
           //  code: 'var next_events = ' + JSON.stringify(events)
@@ -52,7 +51,8 @@ function onGAPILoad() {
   })
   }, function(error) {
     console.log('error', error)
-  });}
+  });
+}
 
 chrome.browserAction.onClicked.addListener(function() {
   var newURL = "meetings.html";

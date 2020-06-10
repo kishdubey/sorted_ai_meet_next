@@ -6,14 +6,16 @@ if (events.length > 0) {
   for (i = 0; i < events.length; i++) {
     var event = events[i];
     var row = table.insertRow(i);
-    var cell1 = row.insertCell(0);
-    var cell2 = row.insertCell(1);
-    var cell3 = row.insertCell(2);
+    var cell0 = row.insertCell(0);
+    var cell1 = row.insertCell(1);
+    var cell2 = row.insertCell(2);
 
-    cell1.innerHTML = event.summary;
+    cell0.innerHTML = event.summary;
     var when = event.start.dateTime || event.start.date;
-    cell2.innerHTML = when;
-    cell3.innerHTMl = event.location;
+    cell1.innerHTML = when;
+    var loc = event.location || event.hangoutLink;
+    cell2.innerHTMl = when;
+    console.log(loc);
     console.log(event.summary);
   }
 } else {
