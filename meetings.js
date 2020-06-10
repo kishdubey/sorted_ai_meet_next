@@ -13,9 +13,10 @@ if (events.length > 0) {
     var when = event.start.dateTime || event.start.date;
     var loc = event.location || event.hangoutLink;
 
+
     cell0.innerHTML = event.summary;
     cell1.innerHTML = when;
-    cell2.innerHTMl = loc;
+    cell2.innerHTMl = '<a href="loc">Join</a>'
     console.log(loc);
     console.log(event.summary);
   }
