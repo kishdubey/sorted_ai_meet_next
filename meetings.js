@@ -10,11 +10,12 @@ if (events.length > 0) {
     var cell1 = row.insertCell(1);
     var cell2 = row.insertCell(2);
 
-    cell0.innerHTML = event.summary;
     var when = event.start.dateTime || event.start.date;
-    cell1.innerHTML = when;
     var loc = event.location || event.hangoutLink;
-    cell2.innerHTMl = when;
+
+    cell0.innerHTML = event.summary;
+    cell1.innerHTML = when;
+    cell2.innerHTMl = loc;
     console.log(loc);
     console.log(event.summary);
   }
