@@ -11,11 +11,7 @@ if (events.length > 0) {
     var cell3 = row.insertCell(2);
 
     cell1.innerHTML = event.summary;
-    var when = event.start.dateTime
-    if (!when) {
-      when = event.start.date
-    }
-    when = moment(when).format(('MM/DD/YYYY h:mm a');
+    var when = event.start.dateTime || event.start.date;
     cell2.innerHTML = when;
     cell3.innerHTMl = event.location;
     console.log(event.summary);
