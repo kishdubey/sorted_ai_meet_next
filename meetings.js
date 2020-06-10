@@ -16,7 +16,7 @@ if (events.length > 0) {
 
     cell0.innerHTML = event.summary;
     cell1.innerHTML = when;
-    cell2.innerHTMl = '<a href="loc">Join</a>'
+    cell2.innerHTML = '<a href="'+loc+'">Join</a>';
     console.log(loc);
     console.log(event.summary);
   }
