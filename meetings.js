@@ -11,8 +11,7 @@ if (events.length > 0) {
     var cell2 = row.insertCell(2);
 
     var when = event.start.dateTime || event.start.date;
-    var loc = event.location || event.hangoutLink;
-
+    var loc = event.location || event.hangoutLink || event.description;
 
     cell0.innerHTML = event.summary;
     cell1.innerHTML = when;
