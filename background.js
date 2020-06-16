@@ -31,8 +31,19 @@ function onGAPILoad() {
           //  chrome.tabs.executeScript(null, {file: 'meetings.js'})
           //})
 
-          // Store in localStorage
+          // Store in localStorage * Change to cookies
           localStorage.setItem('events', JSON.stringify(response.result.items));
+          // var meetingEvents = JSON.stringify(events);
+          // chrome.cookies.set({
+          //   "name": "Events",
+          //   "url": "chrome-extension://dbjnimpbgjmfiiladcbdafmoimfbokkb/meetings.js",
+          //   "value": "dummy data",
+          //   "expirationDate": (new Date().getTime()/1000) + 360
+          // }), function (cookie) {
+          //   console.log(JSON.stringify(cookie));
+          //   console.log(chrome.extension.lastError);
+          //   console.log(chrome.runtime.lastError);
+          // }
 
           console.log('Upcoming events:');
           if (events.length > 0) {

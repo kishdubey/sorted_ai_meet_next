@@ -13,6 +13,11 @@ if (events.length > 0) {
     var when = event.start.dateTime || event.start.date;
     var loc = event.location || event.hangoutLink || event.description;
 
+    //var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
+    //var regex = new RegExp(expression);
+
+    //var url = loc.match(expression);
+
     cell0.innerHTML = event.summary;
     cell1.innerHTML = when;
     cell2.innerHTML = '<a href="'+loc+'">Join</a>';
