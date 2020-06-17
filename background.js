@@ -19,27 +19,14 @@ function onGAPILoad() {
         'timeMin': (new Date()).toISOString(),
         'showDeleted': false,
         'singleEvents': true,
-        'maxResults': 10,
+        'maxResults': 1,
         'orderBy': 'startTime'
       }).then(function(response) {
         var events = response.result.items;
+        // Store Events
         chrome.storage.sync.set({'events': JSON.stringify(events)}, function() {
           console.log('Value Set');
         });
-
-        console.log('Upcoming events:');
-        if (events.length > 0) {
-          for (i = 0; i < events.length; i++) {
-            var event = events[i];
-            var when = event.start.dateTime;
-            if (!when) {
-              when = event.start.date;
-            }
-            console.log(event.summary + ' (' + when + ')')
-          }
-        } else {
-          console.log('No upcoming events found.');
-        }
       });
     })
   }, function(error) {
@@ -48,7 +35,17 @@ function onGAPILoad() {
 }
 
 chrome.browserAction.onClicked.addListener(function() {
-  // add events if here
-  var newURL = "meetings.html";
-  chrome.tabs.create({url: newURL})
+  // HTML rerouting
+  var meetings = "meetings.html";
+  var noMeetings = "noMeetings.html";
+
+  chrome.storage.sync.get(['events'], function(result) {
+    var events = JSON.parse(result['events']);
+    if (events.length > 0){
+      chrome.tabs.create({url: meetings});
+    }
+    else {
+      chrome.tabs.create({url: noMeetings});
+    }
+  });
 })
