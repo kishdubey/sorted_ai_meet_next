@@ -8,7 +8,7 @@
     "scopes":["https://www.googleapis.com/auth/calendar.events.readonly"]
   },
   "content_security_policy": "script-src 'self' https://apis.google.com/; object-src 'self'",
-  "permissions": ["tabs", "identity", "storage", "cookies"],
+  "permissions": ["tabs", "identity", "storage"],
   "background": {
     "page": "background.html",
     "persistent": false

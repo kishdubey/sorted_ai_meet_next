@@ -3,69 +3,52 @@ const DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v
 
 function onGAPILoad() {
   gapi.client.init({
-    // Don't pass client nor scope as these will init auth2, which we don't want
     apiKey: API_KEY,
     discoveryDocs: DISCOVERY_DOCS,
   }).then(function () {
     console.log('gapi initialized');
 
-  chrome.identity.getAuthToken({interactive: true}, function(token) {
-    console.log("token", token);
-    gapi.auth.setToken({
-      'access_token': token,
-    });
+    chrome.identity.getAuthToken({interactive: true}, function(token) {
+      console.log("token", token);
+      gapi.auth.setToken({
+        'access_token': token,
+      });
 
-    gapi.client.calendar.events.list({
-          'calendarId': 'primary',
-          'timeMin': (new Date()).toISOString(),
-          'showDeleted': false,
-          'singleEvents': true,
-          'maxResults': 10,
-          'orderBy': 'startTime'
-        }).then(function(response) {
-          var events = response.result.items; //get this into meetings.html
-          //Send to meetings.js
-          //chrome.tabs.executeScript(null, {
-          //  code: 'var next_events = ' + JSON.stringify(events)
-          //}, function(){
-          //  chrome.tabs.executeScript(null, {file: 'meetings.js'})
-          //})
-
-          // Store in localStorage * Change to cookies
-          localStorage.setItem('events', JSON.stringify(response.result.items));
-          // var meetingEvents = JSON.stringify(events);
-          // chrome.cookies.set({
-          //   "name": "Events",
-          //   "url": "chrome-extension://dbjnimpbgjmfiiladcbdafmoimfbokkb/meetings.js",
-          //   "value": "dummy data",
-          //   "expirationDate": (new Date().getTime()/1000) + 360
-          // }), function (cookie) {
-          //   console.log(JSON.stringify(cookie));
-          //   console.log(chrome.extension.lastError);
-          //   console.log(chrome.runtime.lastError);
-          // }
-
-          console.log('Upcoming events:');
-          if (events.length > 0) {
-            for (i = 0; i < events.length; i++) {
-              var event = events[i];
-              var when = event.start.dateTime;
-              if (!when) {
-                when = event.start.date;
-              }
-              console.log(event.summary + ' (' + when + ')')
-            }
-          } else {
-            console.log('No upcoming events found.');
-          }
+      gapi.client.calendar.events.list({
+        'calendarId': 'primary',
+        'timeMin': (new Date()).toISOString(),
+        'showDeleted': false,
+        'singleEvents': true,
+        'maxResults': 10,
+        'orderBy': 'startTime'
+      }).then(function(response) {
+        var events = response.result.items;
+        chrome.storage.sync.set({'events': JSON.stringify(events)}, function() {
+          console.log('Value Set');
         });
-  })
+
+        console.log('Upcoming events:');
+        if (events.length > 0) {
+          for (i = 0; i < events.length; i++) {
+            var event = events[i];
+            var when = event.start.dateTime;
+            if (!when) {
+              when = event.start.date;
+            }
+            console.log(event.summary + ' (' + when + ')')
+          }
+        } else {
+          console.log('No upcoming events found.');
+        }
+      });
+    })
   }, function(error) {
     console.log('error', error)
   });
 }
 
 chrome.browserAction.onClicked.addListener(function() {
+  // add events if here
   var newURL = "meetings.html";
   chrome.tabs.create({url: newURL})
 })
