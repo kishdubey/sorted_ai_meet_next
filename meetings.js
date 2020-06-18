@@ -1,18 +1,19 @@
 function findUrl(text) {
   var expression = /[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)?/gi;
   var regex = new RegExp(expression);
-
   var url = text.match(expression);
 
-  console.log(text);
-
   if (text.match(regex)) {
-    return url[0]; // returns first link it finds
+    if(url[0].includes("https://")){
+      return url[0];
+    }
+    else{
+      return "https://"+url[0];
+    }
   }
   else {
     return "Not Found";
   }
-
 }
 
 chrome.storage.sync.get(['events'], function(result) {
@@ -33,7 +34,7 @@ chrome.storage.sync.get(['events'], function(result) {
 
       cell0.innerHTML = event.summary;
       cell1.innerHTML = when;
-      cell2.innerHTML = '<a href="'+url+'">Join</a>';
+      cell2.innerHTML = '<a href="'+url+'" target="_blank">Join</a>';
       console.log("this is", url);
       console.log(event.summary);
     }
