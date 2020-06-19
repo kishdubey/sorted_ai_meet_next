@@ -15,9 +15,9 @@
   },
   "content_scripts": [{
     "matches": ["<all_urls>"],
-    "js": ["meetings.js"]
+    "js": ["js/meetings.js"]
     }],
-    
+
   "browser_action": {
     "default_title": "SortedAI MeetNext",
     "default_icon": {
