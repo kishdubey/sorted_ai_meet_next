@@ -17,27 +17,30 @@ function findUrl(text) {
 }
 
 chrome.storage.sync.get(['events'], function(result) {
-  var events = JSON.parse(result['events']);
-  var table = document.getElementById("eventsTable");
+  var calendar_event = JSON.parse(result['events']);
+  //var table = document.getElementById("eventsTable");
+  console.log(calendar_event);
 
-  if (events.length > 0) {
-    for (i = 0; i < events.length; i++) {
-      var event = events[i];
-      var row = table.insertRow(i);
-      var cell0 = row.insertCell(0);
-      var cell1 = row.insertCell(1);
-      var cell2 = row.insertCell(2);
-
-      var when = event.start.dateTime || event.start.date;
-      var url = (event.location + event.hangoutLink + event.description).split("undefined").join("");
+  if (calendar_event.length > 0) {
+      calendar_event = calendar_event[0];
+      var when = calendar_event.start.dateTime || calendar_event.start.date;
+      var url = (calendar_event.location + calendar_event.hangoutLink + calendar_event.description).split("undefined").join("");
       url = findUrl(url);
 
-      cell0.innerHTML = event.summary;
-      cell1.innerHTML = when;
-      cell2.innerHTML = '<a href="'+url+'" target="_blank">Join</a>';
+      var summary = document.getElementById("sum");
+      summary.innerHTML = calendar_event.summary;
+
+      var date = document.getElementById("date");
+      date.innerHTML = when;
+
+      var join = document.getElementById("link");
+      join.innerHTML = '<a href="'+url+'" target="_blank">Join</a>';
+
+      var calendarLink = document.getElementById("details")
+      calendarLink.innerHTML = '<a href="'+calendar_event.htmlLink+'" target="_blank">Check Details</a>';
       console.log("this is", url);
-      console.log(event.summary);
-    }
+      console.log(calendar_event.summary);
+
   } else {
     console.log('No upcoming events found.');
   }
