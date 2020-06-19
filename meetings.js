@@ -29,7 +29,7 @@ chrome.storage.sync.get(['events'], function(result) {
       var cell2 = row.insertCell(2);
 
       var when = event.start.dateTime || event.start.date;
-      var url = (event.location + event.hangoutLink + event.description).replace('undefined','');
+      var url = (event.location + event.hangoutLink + event.description).split("undefined").join("");
       url = findUrl(url);
 
       cell0.innerHTML = event.summary;
