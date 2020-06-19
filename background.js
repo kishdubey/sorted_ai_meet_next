@@ -36,7 +36,7 @@ function onGAPILoad() {
 
 chrome.browserAction.onClicked.addListener(function() {
   // HTML rerouting
-  var meetings = "noMeetings.html";
+  var meetings = "meetings.html";
   var noMeetings = "noMeetings.html";
 
   chrome.storage.sync.get(['events'], function(result) {
