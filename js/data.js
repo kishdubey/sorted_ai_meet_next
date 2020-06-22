@@ -27,6 +27,11 @@ chrome.storage.sync.get(['events'], function(result) {
       var when = calendar_event.start.dateTime;
       if (!when) {
         when = calendar_event.start.date;
+      } else {
+        when = when.substring(11, 16);
+        var end = calendar_event.end.dateTime.substring(11, 16);
+        console.log(when, end);
+        when = when + " to " + end;
       }
 
       var url = (calendar_event.location + '' + calendar_event.hangoutLink + calendar_event.description).split("undefined").join("");
@@ -36,7 +41,7 @@ chrome.storage.sync.get(['events'], function(result) {
       summary.innerHTML = calendar_event.summary;
 
       var date = document.getElementById("date");
-      date.innerHTML = when.replace("T", " ");
+      date.innerHTML = when;
 
       var join = document.getElementById("link");
       join.innerHTML = '<a href="'+url+'" target="_blank">Join</a>';
