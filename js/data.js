@@ -36,15 +36,13 @@ chrome.storage.sync.get(['events'], function(result) {
       summary.innerHTML = calendar_event.summary;
 
       var date = document.getElementById("date");
-      date.innerHTML = when;
+      date.innerHTML = when.replace("T", " ");
 
       var join = document.getElementById("link");
       join.innerHTML = '<a href="'+url+'" target="_blank">Join</a>';
 
       var calendarLink = document.getElementById("details")
       calendarLink.innerHTML = '<a href="'+calendar_event.htmlLink+'" target="_blank">Check Details</a>';
-      console.log("this is", url);
-      console.log(calendar_event.summary);
 
   } else {
     console.log('No upcoming events found.');
