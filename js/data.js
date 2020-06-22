@@ -23,8 +23,13 @@ chrome.storage.sync.get(['events'], function(result) {
 
   if (calendar_event.length > 0) {
       calendar_event = calendar_event[0];
-      var when = calendar_event.start.dateTime || calendar_event.start.date;
-      var url = (calendar_event.location + calendar_event.hangoutLink + calendar_event.description).split("undefined").join("");
+
+      var when = calendar_event.start.dateTime;
+      if (!when) {
+        when = calendar_event.start.date;
+      }
+
+      var url = (calendar_event.location + '' + calendar_event.hangoutLink + calendar_event.description).split("undefined").join("");
       url = findUrl(url);
 
       var summary = document.getElementById("sum");
