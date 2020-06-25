@@ -34,7 +34,7 @@ chrome.storage.sync.get(['events'], function(result) {
         when = when + " to " + end;
       }
 
-      var url = (calendar_event.location + '' + calendar_event.hangoutLink + calendar_event.description).split("undefined").join("");
+      var url = (calendar_event.location + ' ' + calendar_event.hangoutLink + ' ' + calendar_event.description).split("undefined").join("");
       url = findUrl(url);
 
       var summary = document.getElementById("sum");
