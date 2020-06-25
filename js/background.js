@@ -35,6 +35,8 @@ function onGAPILoad() {
 }
 
 chrome.browserAction.onClicked.addListener(function() {
+  onGAPILoad();
+
   // HTML rerouting
   var meetings = "meetings.html";
   var noMeetings = "noMeetings.html";
