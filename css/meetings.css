@@ -1,3 +1,7 @@
+@import
+	url('https://fonts.googleapis.com/css?family=Product Sans:400,500,700|Montserrat:400,500,700')
+	;
+
 .mediaViewInfo {
 	--web-view-name: Web 1920 – 7;
 	--web-view-id: Web_1920__7;
@@ -19,7 +23,6 @@
 	position: absolute;
 	width: 1920px;
 	height: 1080px;
-	background-color: rgba(67,192,196,1);
 	overflow: hidden;
 	--web-view-name: Web 1920 – 7;
 	--web-view-id: Web_1920__7;
@@ -36,41 +39,44 @@
 	top: -79px;
 	overflow: visible;
 }
-#Rebound_session_around_Product {
-	left: 387px;
+#meeting_title {
+	left: 400px;
 	top: 468px;
 	position: absolute;
 	overflow: visible;
 	width: 1183px;
 	white-space: nowrap;
 	text-align: left;
-	font-family: Segoe UI;
+	font-family: Product Sans;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 70px;
 	color: rgba(62,62,62,1);
 }
-#ID0400_PM_to_0630_PM {
-	left: 406px;
+#meeting_time {
+	left: 400px;
 	top: 326px;
 	position: absolute;
 	overflow: visible;
 	width: 815px;
 	white-space: nowrap;
-	text-align: center;
-	font-family: Segoe UI;
+	text-align: left;
+	font-family: Product Sans;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 80px;
 	color: rgba(221,40,73,1);
 }
-#Group_2 {
+#join-button {
 	position: absolute;
 	width: 267px;
 	height: 77px;
-	left: 387px;
+	left: 400px;
 	top: 673px;
 	overflow: visible;
+	background-color:#fff;
+	border: 1px solid #a2a2a2;
+	border-radius: 20px 20px 20px 20px;
 }
 #Rectangle_2 {
 	fill: rgba(255,255,255,1);
@@ -89,30 +95,29 @@
 	left: 0px;
 	top: 0px;
 }
-#Join_Now {
-	left: 44px;
-	top: 24px;
+#join_now {
+	left: 42px;
+	top: 14px;
 	position: absolute;
 	overflow: visible;
 	width: 179px;
 	white-space: nowrap;
 	text-align: center;
-	font-family: Segoe UI;
+	font-family: Product Sans;
 	font-style: normal;
 	font-weight: bold;
 	font-size: 40px;
 	color: rgba(221,40,73,1);
 }
 #Check_Details {
-	left: 393px;
-	top: 797px;
+	left: 691px;
+	top: 692px;
 	position: absolute;
 	overflow: visible;
 	width: 187px;
 	white-space: nowrap;
 	text-align: center;
-	font-family: Segoe UI;
-	font-style: italic;
+	font-family: Product Sans;
 	font-weight: normal;
 	font-size: 30px;
 	color: rgba(62,62,62,1);
@@ -126,16 +131,16 @@
 	top: 0px;
 	overflow: visible;
 }
-#My-Next-Meeting-Today {
-	left: 421px;
+#heading_text {
+	left: 400px;
 	top: 211px;
 	position: absolute;
 	overflow: visible;
 	width: 559px;
 	white-space: nowrap;
 	text-align: center;
-	font-family: Segoe UI;
-	font-style: normal;
+	font-family: Product Sans;
+	font-style: italic;
 	font-weight: bold;
 	font-size: 50px;
 	color: rgba(132,91,157,1);
